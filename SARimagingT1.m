@@ -66,7 +66,7 @@ final_sar_image=fftshift(ifft2(sar_data_FFT .* matched_filter_FFT));
 [y_target_t,x_target_t]=size(final_sar_image);
 
 X=sampleX* (-(x_target_t-1)/2: (x_target_t-1)/2); %base on size of im but is also in mm alrdy
-Y=sampleX* (-(x_target_t-1)/2: (x_target_t-1)/2);
+Y=sampleY* (-(y_target_t-1)/2: (y_target_t-1)/2);
 
 %crop to img of related region
 indX=X>(-im_size/2)&X<(im_size/2); 
