@@ -1,20 +1,23 @@
 %% load/import raw data
-data = 'rawData3D_simple2D'; % Change only this line
+data = 'data_cube'; % Change only this line
 raw_data = load(data);
 raw_data = raw_data.(data);
 
 %% declare some vals we will use.
 nFFT=1024; %space and time fft n are both 1024 so just package into 1 var
-targetZ=280; %range of target, measure in z axis as a range for img slice 
+targetZ=66.5; %range of target, measure in z axis as a range for img slice 
 
 %67.5 cm depth - 1 cm
 
-sampleX=200/406;
-sampleY=2;
+sampleX=4;
+sampleY=4; %=200/100
 light_spd=physconst('lightspeed');
-fs=9121e3; %sample rate
-ts=1/fs; %sample period
-k=63.343e12; %slope const in (hz/sec)  ??
+fs=10000;
+ts=1/fs;
+k=29.982;
+%fs=9121e3; %sample rate
+%ts=1/fs; %sample period
+%k=63.343e12; %slope const in (hz/sec)  ??
 
 %% range-fft rawdata
 
